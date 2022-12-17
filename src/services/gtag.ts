@@ -11,10 +11,17 @@ export const pageview = (url: string): void => {
   })
 }
 
+type eventArg = {
+  action: string
+  category: string
+  label: string
+  value: number
+}
+
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
 export const event = (
-  { action, category, label, value },
-  options: Object = null,
+  { action, category, label, value }: eventArg,
+  options = {},
 ): void => {
   if (typeof window === 'undefined' || typeof window?.gtag !== 'function')
     return

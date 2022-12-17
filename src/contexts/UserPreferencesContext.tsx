@@ -13,7 +13,7 @@ type PrefersColorScheme = 'no-preference' | 'dark' | 'light'
 type PrefersReducedMotion = 'no-preference' | 'reduce' | 'no-reduce'
 
 interface IUserPreferencesContextData {
-  userAgent: IResult
+  userAgent: IResult | null
   prefersColorScheme: PrefersColorScheme
   prefersReducedMotion: PrefersReducedMotion
 }
@@ -32,7 +32,7 @@ const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)'
 export const UserPreferencesProvider = ({
   children,
 }: IUserPreferencesProvider): ReactElement => {
-  const [userAgent] = useState<IResult>(() => {
+  const [userAgent] = useState<IResult | null>(() => {
     if (typeof window !== 'undefined') {
       const data = uaParser(window.navigator.userAgent)
 
@@ -64,7 +64,7 @@ export const UserPreferencesProvider = ({
   useEffect(() => {
     const motionMediaQueryList = window.matchMedia(REDUCED_MOTION_QUERY)
 
-    const motionListener = event => {
+    const motionListener = (event: MediaQueryListEvent) => {
       setPrefersReducedMotion(event.matches ? 'reduce' : 'no-reduce')
     }
 

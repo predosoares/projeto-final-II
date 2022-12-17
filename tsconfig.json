@@ -21,7 +21,8 @@
     "typeRoots": [
       "./node_modules/@types",
       "./src/@types"
-    ]
+    ],
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
@@ -32,6 +33,6 @@
   ],
   "exclude": [
     "node_modules",
-    "**/*.spec.tsx",
+    "**/*.spec.tsx"
   ]
 }
