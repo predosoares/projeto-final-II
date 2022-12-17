@@ -1,0 +1,20 @@
+:root {
+  --clr-white: 0 100% 100%;
+  --clr-orange: 36 100% 50%;
+  --clr-red: 2 100% 44%;
+  --clr-gray-400: 210 6% 35%;
+  --clr-gray-500: 213 8% 27%;
+  --clr-gray-600: 218 15% 14%;
+  --clr-gray-700: 0 0% 0% / 0.5;
+
+  --text-clr: hsl(var(--clr-white));
+  --accent-clr: hsl(var(--clr-orange));
+  --brand-clr: hsl(var(--clr-red));
+  --border-01-clr: hsl(var(--clr-white));
+  --border-02-clr: hsl(var(--clr-white) / 0.3);
+
+  --surface-01-clr: hsl(var(--clr-gray-500));
+  --surface-02-clr: hsl(var(--clr-gray-600));
+  --surface-03-clr: hsl(var(--clr-gray-400));
+  --surface-04-clr: hsl(var(--clr-gray-700));
+}
