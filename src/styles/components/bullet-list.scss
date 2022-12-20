@@ -1,0 +1,32 @@
+.bullet-list {
+  --gap: 1.8rem;
+  @extend %flex;
+  flex-direction: column;
+  padding-block: 1.8rem;
+  padding-inline: 1.8rem;
+}
+
+.bullet-list__item {
+  --gap: 1.2rem;
+  @extend %flex;
+
+}
+
+.bullet-list__bullet {
+  @extend %center;
+  @extend %text-sm;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 8px;
+  background-color: hsl(var(--gray-300));
+
+}
+
+.bullet-list__text {
+  @extend %text-base;
+  max-width: 65ch;
+
+  strong {
+    font-weight: var(--font-semibold);
+  }
+}

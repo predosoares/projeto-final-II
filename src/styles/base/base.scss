@@ -5,16 +5,13 @@
 }
 
 html {
-  font-size: clamp(0.625rem, 0.625rem + 0.18vw, 4rem);
+  font-size: MAX(MIN(calc(100vw / 1440 * 10), 10px), 7.5px);
 
   scroll-behavior: smooth;
 
-  @include media ("<=desktop") {
-    font-size: clamp(0.37rem, 0.37rem + 0.16vw, 0.625rem);
-  }
 
   @include media ("<=tablet") {
-    font-size: calc(100vw / 1400 * 10);
+    font-size: calc(100vw / 375 * 2.8);
   }
 
   @include media ("<=phone") {
@@ -23,7 +20,7 @@ html {
 }
 
 body {
-  font-family: Helvetica, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -95,18 +92,12 @@ p {
   &:focus {
     outline-style: solid;
     outline-width: 2px;
-    outline-color: var(--brand-clr);
+    outline-color: hsl(var(--purple-600));
     outline-offset: 0.4rem;
   }
 
   &:active {
     outline-offset: 0.0rem;
-  }
-}
-
-:where(button, [data-button]) {
-  &:hover {
-    transform: scale(1.025);
   }
 }
 

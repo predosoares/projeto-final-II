@@ -1,0 +1,18 @@
+%text-base {
+  font-size: var(--text-base);
+  font-weight: var(--font-regular);
+  line-height: var(--leading-relaxed);
+
+  @include media ("<phone") {
+  }
+}
+
+%text-sm {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-relaxed);
+
+  @include media ("<phone") {
+  }
+}
+

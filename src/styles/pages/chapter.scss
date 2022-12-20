@@ -1,0 +1,60 @@
+.chapter {
+  @extend %page;
+  background-color: HSL(var(--gray-200));
+}
+
+.chapter__wrapper {
+  @extend %page__wrapper;
+
+  padding-inline: 6.4rem;
+  padding-block: 4rem;
+}
+
+.chapter__content {
+  width: 100%;
+  max-width: 90rem;
+  margin-inline: auto;
+  border-radius: 12px;
+  background-color: HSL(var(--white));
+  padding-inline: 4.8rem;
+  padding-block: 3.6rem;
+
+  @extend %flex;
+  flex-direction: column;
+  --gap: 6.4rem;
+}
+
+.chapter__section {
+  @extend %flex;
+  flex-direction: column;
+
+  &.--v-summary {
+    --gap: 3.2rem;
+  }
+
+}
+
+.chapter__header {
+  --gap: 1.8rem;
+  @extend %flex;
+  flex-direction: column;
+}
+
+.chapter__heading-1 {
+  @extend %heading-3xl;
+}
+
+.chapter__heading-2 {
+  @extend %heading-2xl;
+
+}
+
+.chapter__heading-3 {
+  @extend %heading-xl;
+  color: hsl(var(--gray-700));
+}
+
+.chapter__text {
+  @extend %text-base;
+  max-width: 65ch;
+}

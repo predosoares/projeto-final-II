@@ -1,0 +1,11 @@
+.explorable {
+  @extend %center;
+  position: relative;
+  border-radius: 8px;
+
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  margin-block: 1.8rem;
+
+  background-color: hsl(var(--gray-200));
+}
