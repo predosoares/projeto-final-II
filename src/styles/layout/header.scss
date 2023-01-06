@@ -1,0 +1,30 @@
+
+.header {
+  @extend %cover;
+  position: fixed;
+
+  z-index: z('header');
+
+  pointer-events: none;
+}
+
+.header__wrapper {
+  @extend %space-between;
+
+  max-width: $max-width;
+  margin-inline: auto;
+  padding-inline: 6.2rem;
+  padding-block: 4rem;
+}
+
+.header__group {
+  @extend %flex;
+
+  & > * {
+    pointer-events: all;
+  }
+
+  &.--right {
+    margin-left: auto;
+  }
+}

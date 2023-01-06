@@ -48,3 +48,13 @@
   }
 }
 
+%heading-sm {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-tight);
+
+  @include media ("<phone") {
+    // font-size: 1%4rem;
+  }
+}
+

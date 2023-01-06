@@ -1,6 +1,9 @@
 .chapter {
   @extend %page;
-  background-color: HSL(var(--gray-200));
+
+  background-size: 4rem 4rem;
+  background-image: radial-gradient(circle, #4e4e4e 1px, rgba(0, 0, 0, 0) 1px);
+  background-color: var(--bg-clr-02);
 }
 
 .chapter__wrapper {
@@ -15,7 +18,7 @@
   max-width: 90rem;
   margin-inline: auto;
   border-radius: 12px;
-  background-color: HSL(var(--white));
+  background-color: var(--bg-clr-01);
   padding-inline: 4.8rem;
   padding-block: 3.6rem;
 
@@ -25,13 +28,13 @@
 }
 
 .chapter__section {
+  --gap: 2.8rem;
   @extend %flex;
   flex-direction: column;
 
   &.--v-summary {
     --gap: 3.2rem;
   }
-
 }
 
 .chapter__header {
@@ -40,16 +43,17 @@
   flex-direction: column;
 }
 
-.chapter__heading-1 {
+.chapter__heading-3xl {
   @extend %heading-3xl;
 }
 
-.chapter__heading-2 {
+.chapter__heading-2xl {
   @extend %heading-2xl;
+  max-width: 32ch;
 
 }
 
-.chapter__heading-3 {
+.chapter__heading-xl {
   @extend %heading-xl;
   color: hsl(var(--gray-700));
 }

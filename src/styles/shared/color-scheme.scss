@@ -1,0 +1,72 @@
+:root {
+  color-scheme: light;
+
+  --accent-clr: hsl(var(--purple-600));
+
+  --font-clr-01: hsl(var(--gray-900));
+  --font-clr-02: hsl(var(--gray-800));
+  --font-clr-03: hsl(var(--gray-100));
+  --font-clr-04: hsl(var(--blue-100));
+  --font-clr-04: hsl(var(--purple-600));
+
+  --bg-clr-01: hsl(var(--gray-100));
+  --bg-clr-02: hsl(var(--gray-200));
+  --bg-clr-03: hsl(var(--gray-800));
+  --bg-clr-04: hsl(var(--blue-900));
+  --bg-clr-05: hsl(var(--green-600));
+  --bg-clr-06: hsl(var(--purple-100));
+  --bg-clr-07: hsl(var(--purple-600));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --font-clr-01: hsl(var(--gray-100));
+    --font-clr-02: hsl(var(--gray-200));
+    --font-clr-03: hsl(var(--gray-900));
+    --font-clr-04: hsl(var(--blue-700));
+    --font-clr-04: hsl(var(--purple-600));
+
+    --bg-clr-01: hsl(var(--blue-800));
+    --bg-clr-02: hsl(var(--blue-900));
+    --bg-clr-03: hsl(var(--gray-200));
+    --bg-clr-04: hsl(var(--blue-900));
+    --bg-clr-05: hsl(var(--green-600));
+    --bg-clr-06: hsl(var(--purple-900));
+  }
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+
+  --font-clr-01: hsl(var(--gray-900));
+  --font-clr-02: hsl(var(--gray-800));
+  --font-clr-03: hsl(var(--gray-100));
+  --font-clr-04: hsl(var(--blue-100));
+  --font-clr-04: hsl(var(--purple-600));
+
+  --bg-clr-01: hsl(var(--gray-100));
+  --bg-clr-02: hsl(var(--gray-200));
+  --bg-clr-03: hsl(var(--gray-800));
+  --bg-clr-04: hsl(var(--blue-900));
+  --bg-clr-05: hsl(var(--green-600));
+  --bg-clr-06: hsl(var(--purple-100));
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --font-clr-01: hsl(var(--gray-100));
+  --font-clr-02: hsl(var(--gray-200));
+  --font-clr-03: hsl(var(--gray-900));
+  --font-clr-04: hsl(var(--blue-700));
+  --font-clr-04: hsl(var(--purple-600));
+
+  --bg-clr-01: hsl(var(--blue-800));
+  --bg-clr-02: hsl(var(--blue-900));
+  --bg-clr-03: hsl(var(--gray-200));
+  --bg-clr-04: hsl(var(--blue-900));
+  --bg-clr-05: hsl(var(--green-600));
+  --bg-clr-06: hsl(var(--purple-900));
+}

@@ -1,7 +1,12 @@
 import { RocketIcon, ChevronDownIcon } from '@radix-ui/react-icons'
-import { useState } from 'react'
+import { ReactNode, useState } from 'react'
 
-const Details = () => {
+interface IDetailsProps {
+  title: string
+  children: ReactNode
+}
+
+const Details = ({ children, title }: IDetailsProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleClickOnDetailsBtn = () => {
@@ -16,9 +21,7 @@ const Details = () => {
           <h5 className="details__heading-base">Aprofundando</h5>
         </div>
 
-        <p className="details__heading-lg">
-          How to tell if a calculation is expensive?
-        </p>
+        <p className="details__heading-lg">{title}</p>
 
         <button
           className="details__btn"
@@ -33,14 +36,7 @@ const Details = () => {
           {isOpen ? 'Esconder' : 'Mostrar'} detalhes
         </button>
       </summary>
-      <div className="details__content">
-        <p className="details__text-base">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam,
-          nulla soluta ad repellendus velit eaque architecto saepe delectus
-          consectetur reprehenderit rem. Doloribus quibusdam atque dicta id
-          distinctio itaque ea earum!
-        </p>
-      </div>
+      <div className="details__content">{children}</div>
     </details>
   )
 }

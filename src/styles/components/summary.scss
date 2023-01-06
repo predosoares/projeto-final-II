@@ -6,7 +6,7 @@
   padding-block: 2.8rem;
   padding-inline: 3.6rem;
   border-radius: 8px;
-  background-color: HSL(var(--gray-300));
+  background-color: var(--bg-clr-02);
 }
 
 .summary__header {
@@ -37,7 +37,7 @@
     width: 0.6rem;
     height: 0.6rem;
     border-radius: 50%;
-    background-color: black;
+    background-color: var(--font-clr-02);
   }
 }
 
