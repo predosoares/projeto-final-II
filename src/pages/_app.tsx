@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
 import { Inter } from '@next/font/google'
 import { AppProps } from 'next/app'
 import { ReactElement } from 'react'

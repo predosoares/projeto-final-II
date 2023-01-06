@@ -139,7 +139,9 @@ function Chapter() {
               assim que começarmos a esquentar, vamos aguardar 3 minutos e 37
               segundos para desligar o fogão e prepararmos nosso café.
             </p>
-            <Explorable />
+            <Explorable>
+              <Start />
+            </Explorable>{' '}
           </section>
 
           <Separator />
@@ -173,7 +175,9 @@ function Chapter() {
               na verdade, são igualmente complexas. Café é totalmente ciência de
               foguete.
             </p>
-            <Explorable />
+            <Explorable>
+              <Start />
+            </Explorable>
           </section>
         </main>
       </div>
