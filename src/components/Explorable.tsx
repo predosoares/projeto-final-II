@@ -1,5 +1,11 @@
-const Explorable = () => {
-  return <div className="explorable">Explorable</div>
+import { ReactNode } from 'react'
+
+interface IExplorableProps {
+  children: ReactNode
+}
+
+const Explorable = ({ children }: IExplorableProps) => {
+  return <div className="explorable">{children}</div>
 }
 
 export { Explorable }

@@ -1,9 +1,19 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
 // import * as RadixDropdownMenu from '@radix-ui/react-dropdown-menu'
 // import { GearIcon } from '@radix-ui/react-icons'
 
+import dynamic from 'next/dynamic'
+import { Suspense } from 'react'
+
 // import { useTheme } from 'hooks/useTheme'
 
-import { ThemeSwitch } from './ThemeSwitch'
+const ThemeSwitch = dynamic(
+  () => import('./ThemeSwitch').then(({ ThemeSwitch }) => ThemeSwitch),
+  {
+    ssr: false,
+  },
+)
 
 export const DropdownConfigMenu = () => {
   // const { toggleTheme } = useTheme()
@@ -32,7 +42,9 @@ export const DropdownConfigMenu = () => {
           </RadixDropdownMenu.Content>
         </RadixDropdownMenu.Portal>
       </RadixDropdownMenu.Root> */}
-      <ThemeSwitch />
+      <Suspense fallback="loading...">
+        <ThemeSwitch />
+      </Suspense>
     </div>
   )
 }

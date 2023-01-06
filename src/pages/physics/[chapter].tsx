@@ -1,6 +1,7 @@
 // import { BulletList } from 'components/BulletList'
 import { Details } from 'components/Details'
 import { Explorable } from 'components/Explorable'
+import { Start } from 'components/explorables/physics/calorimetry/coffee/Start'
 import { Separator } from 'components/Separator'
 import { Summary } from 'components/Summary'
 
@@ -35,9 +36,7 @@ function Chapter() {
           </section>
 
           <section className="chapter__section">
-            <h2 className="chapter__heading-2xl">
-              Como fazer o café perfeito?
-            </h2>
+            <h2 className="chapter__heading-2xl">Como fazer café ?</h2>
             <p className="chapter__text">
               Nada como tomar um bom café durante a manhã para começar bem o
               dia, você sabe fazer café? Provavelmente sim, e se não sabe tá
@@ -45,7 +44,9 @@ function Chapter() {
               esquentá-la para conseguir realizar a extração do nosso café com o
               filtro de papel.
             </p>
-            <Explorable />
+            <Explorable>
+              <Start />
+            </Explorable>
             <p className="chapter__text">
               Para você aquecer a água até os 100°C você teve que expor a água,
               que estava a temperatura ambiente, a uma fonte de calor, que nesse
