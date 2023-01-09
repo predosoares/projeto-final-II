@@ -34,13 +34,13 @@
 .details__icon {
   width: 2.4rem;
   height: 2.4rem;
-  color: var(--font-clr-04);
+  color: var(--font-clr-05);
 }
 
 .details__heading-base {
   @extend %heading-base;
   text-transform: uppercase;
-  color: var(--font-clr-04);
+  color: var(--font-clr-05);
 }
 
 .details__heading-lg {
@@ -57,7 +57,7 @@
   width: fit-content;
 
   background-color: var(--bg-clr-07);
-  color: var(--font-clr-01);
+  color: var(--font-clr-06);
   text-transform: capitalize;
 
 }

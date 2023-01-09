@@ -1,0 +1,41 @@
+
+
+.section {
+  --gap: 2.8rem;
+  @extend %flex;
+  flex-direction: column;
+
+
+  @include fadeUp(0.8s, 0s, 0, 10rem);
+
+  &.--v-summary {
+    --gap: 3.2rem;
+    @include fadeUp(0.8s, 0.4s, 0, 10rem);
+  }
+}
+
+.section__header {
+  --gap: 1.8rem;
+  @extend %flex;
+  flex-direction: column;
+}
+
+.section__heading-3xl {
+  @extend %heading-3xl;
+}
+
+.section__heading-2xl {
+  @extend %heading-2xl;
+  max-width: 32ch;
+
+}
+
+.section__heading-xl {
+  @extend %heading-xl;
+  color: hsl(var(--gray-700));
+}
+
+.section__text-base {
+  @extend %text-base;
+  max-width: 65ch;
+}

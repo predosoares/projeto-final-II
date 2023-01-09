@@ -1,0 +1,13 @@
+.formula-example {
+  @extend %center;
+  width: 100%;
+  padding-block: 3.2rem;
+  margin-block: 1.8rem;
+  border-radius: 12px;
+  background-color: var(--bg-clr-02);
+  border: 1px solid var(--border-clr-01);
+}
+
+.formula-example__text-base {
+  @extend %text-base;
+}

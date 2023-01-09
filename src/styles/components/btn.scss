@@ -1,6 +1,7 @@
 .btn {
   @extend %heading-base;
   @extend %flex;
+  position: relative;
   align-items: center;
   width: 100%;
   max-width: 4.2rem;
@@ -8,11 +9,17 @@
   border-radius: 12px;
   padding-inline: 1rem;
 
-  background-color:var(--bg-clr-01);
+  background-color: var(--bg-clr-01);
   border: 1px solid var(--);
   color: var(--font-clr-01);
   overflow: hidden;
-  box-shadow: var(--elevantion-2);
+  box-shadow: var(--elevation-2);
+
+  user-select: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.75s cubic-bezier(.25,.8,.25,1);;
+
 
   &:disabled {
     background-color: transparent;
@@ -22,9 +29,65 @@
   &:hover {
     max-width: 22rem;
   }
+
+  > span {
+    z-index: 100;
+    position: relative;
+    color: transparent;
+  }
+
+    &:hover {
+    border-color: var(--accent-clr);
+
+     .btn__text {
+      &::before {
+        transform: translate3d(-50%, -300%, 0);
+      }
+
+      &::after {
+        color: var(--accent-clr);
+        transform: translate3d(-50%, -50%, 0);
+      }
+    }
+  }
+}
+
+.btn__text {
+  display: block;
+
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: var(--font-clr-01);
+    white-space: nowrap;
+    transform: translate3d(-50%, -50%, 0);
+    transition: all 0.65s  cubic-bezier(.25,.8,.25,1);
+  }
+
+  &::after {
+    color: var(--accent-clr);
+    transform: translate3d(-50%, 140%, 0);
+  }
 }
 
 .btn__icon {
   min-width: 2.2rem;
   height: 2.2rem;
+}
+
+.btn__fill {
+  z-index: 10;
+  position: absolute;
+  top: -50%;
+  left: -25%;
+  width: 150%;
+  height: 250%;
+  display: block;
+  border-radius: 50%;
+  background: var(--accent-clr);
+  pointer-events: none;
+  transform: translate3d(0, 80%, 0);
 }

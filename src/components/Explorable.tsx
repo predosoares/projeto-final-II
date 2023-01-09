@@ -1,11 +1,15 @@
-import { ReactNode } from 'react'
+import { HTMLAttributes, ReactNode } from 'react'
 
-interface IExplorableProps {
+interface IExplorableProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode
 }
 
-const Explorable = ({ children }: IExplorableProps) => {
-  return <div className="explorable">{children}</div>
+const Explorable = ({ children, ...rest }: IExplorableProps) => {
+  return (
+    <div className="explorable" {...rest}>
+      {children}
+    </div>
+  )
 }
 
 export { Explorable }

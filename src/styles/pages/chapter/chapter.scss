@@ -1,3 +1,17 @@
+@import './gate';
+@import './section';
+
+@keyframes fadeAndScale {
+  from {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .chapter {
   @extend %page;
 
@@ -8,9 +22,15 @@
 
 .chapter__wrapper {
   @extend %page__wrapper;
+  @extend %space-between;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+  max-width: $max-width;
+  margin-inline: auto;
 
   padding-inline: 6.4rem;
-  padding-block: 4rem;
+  padding-block: 4rem 0;
 }
 
 .chapter__content {
@@ -20,45 +40,13 @@
   border-radius: 12px;
   background-color: var(--bg-clr-01);
   padding-inline: 4.8rem;
-  padding-block: 3.6rem;
+  padding-block: 4.8rem;
 
   @extend %flex;
   flex-direction: column;
   --gap: 6.4rem;
-}
 
-.chapter__section {
-  --gap: 2.8rem;
-  @extend %flex;
-  flex-direction: column;
-
-  &.--v-summary {
-    --gap: 3.2rem;
-  }
-}
-
-.chapter__header {
-  --gap: 1.8rem;
-  @extend %flex;
-  flex-direction: column;
-}
-
-.chapter__heading-3xl {
-  @extend %heading-3xl;
-}
-
-.chapter__heading-2xl {
-  @extend %heading-2xl;
-  max-width: 32ch;
+  animation: fadeAndScale 0.8s cubic-bezier(.25,.8,.25,1);
 
 }
 
-.chapter__heading-xl {
-  @extend %heading-xl;
-  color: hsl(var(--gray-700));
-}
-
-.chapter__text {
-  @extend %text-base;
-  max-width: 65ch;
-}

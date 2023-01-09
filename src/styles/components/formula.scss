@@ -1,0 +1,74 @@
+.formula {
+  margin-block: 1.8rem;
+
+}
+
+.formula__wrapper {
+  position: relative;
+  @extend %center;
+  padding-block: 3.2rem;
+  border-radius: 12px;
+  background-color: var(--bg-clr-07);
+
+  box-shadow: var(--elevation-3);
+}
+
+.formula__form,
+.formula__group {
+  @extend %center;
+}
+
+.formula__form {
+  --gap: 3.2rem;
+  flex-direction: column;
+}
+
+.input__block {
+  @extend %center;
+  background-color: var(--bg-clr-08);
+  border-radius: 8px;
+  padding-inline: 1.2rem;
+
+  &:focus-within {
+    outline: 1px solid var(--bg-clr-08);
+  }
+}
+
+.formula__input {
+  width: 8rem;
+  border: none;
+  background-color: transparent;
+
+  &::placeholder {
+    color: var(--font-clr-06);
+  }
+
+}
+
+.formula__input,
+.formula__text-base {
+  @extend %center;
+  @extend %text-base;
+  color: var(--font-clr-06);
+}
+
+
+.formula__heading-2xl {
+  @extend %heading-xl;
+  color: var(--font-clr-06);
+}
+
+.formula__btn {
+  @extend %heading-base;
+  @extend %center;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 12px;
+  padding-inline: 1rem;
+
+  background-color: var(--bg-clr-08);
+  box-shadow: var(--elevation-2);
+}

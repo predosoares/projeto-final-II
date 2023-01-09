@@ -1,8 +1,11 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
-import { useGLTF, useKeyboardControls } from '@react-three/drei'
+import { useKeyboardControls } from '@react-three/drei'
 import { useEffect, useState } from 'react'
 import * as THREE from 'three'
+
+import { Fire } from './models/Fire'
+import { Stove } from './models/Stove'
 
 THREE.ColorManagement.legacyMode = false
 
@@ -18,14 +21,7 @@ const floorMaterial = new THREE.MeshStandardMaterial({
 export function Level() {
   const [subscribeKeys] = useKeyboardControls()
 
-  const stove = useGLTF('/models/stove.glb')
-  const fire = useGLTF('/models/fire.glb')
-
   const [isHeating, setIsHeating] = useState<boolean>(false)
-
-  stove.scene.children.forEach(mesh => {
-    mesh.castShadow = true
-  })
 
   useEffect(() => {
     const unsubscribeToggleHeatSource = subscribeKeys(
@@ -42,8 +38,6 @@ export function Level() {
     }
   }, [])
 
-  console.log(isHeating)
-
   return (
     <>
       <mesh
@@ -54,11 +48,9 @@ export function Level() {
         receiveShadow
       />
 
-      <primitive object={stove.scene} scale={0.3} />
+      <Stove scale={0.3} />
 
-      {isHeating && (
-        <primitive object={fire.scene} scale={2.4} position={[0.95, 0.6, 0]} />
-      )}
+      {isHeating && <Fire scale={2.4} position={[0.95, 0.6, 0]} />}
     </>
   )
 }

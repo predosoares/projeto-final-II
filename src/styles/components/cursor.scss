@@ -1,0 +1,31 @@
+.cursor {
+  @extend %center;
+  position: absolute;
+  transform: translate(-50%, -50%);
+
+  transition: transform 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+  pointer-events: none;
+
+  width: 6rem;
+  height: 6rem;
+  border-radius: 3rem;
+  perspective: 1px;
+  background-color: var(--accent-clr);
+  opacity: 0.2;
+
+  &.pointer {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+
+.cursor__container {
+  @extend %cover;
+  position: fixed;
+  z-index: z('cursor');
+  pointer-events: none;
+  overflow: hidden;
+
+   @include media ("<=phone") {
+    display: none;
+  }
+}
