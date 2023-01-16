@@ -1,5 +1,5 @@
-import { ArrowLeftIcon } from '@radix-ui/react-icons'
 import { motion, useAnimation } from 'framer-motion'
+import { ArrowLeft as ArrowLeftIcon } from 'phosphor-react'
 import { ButtonHTMLAttributes, ReactNode, useEffect, useRef } from 'react'
 
 import { useMousePosition } from 'hooks/useMousePosition'

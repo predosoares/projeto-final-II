@@ -1,6 +1,6 @@
-import { ArrowLeftIcon } from '@radix-ui/react-icons'
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
+import { ArrowLeft as ArrowLeftIcon } from 'phosphor-react'
 
 import { DropdownConfigMenu } from './Dropdown'
 

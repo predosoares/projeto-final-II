@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 // import * as RadixDropdownMenu from '@radix-ui/react-dropdown-menu'
-// import { GearIcon } from '@radix-ui/react-icons'
 
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
