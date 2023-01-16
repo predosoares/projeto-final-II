@@ -22,9 +22,9 @@
 
 .summary__list {
   --gap: 0;
- @extend %flex;
- flex-direction: column;
- padding-inline-start: 0.8rem;
+  @extend %flex;
+  flex-direction: column;
+  padding-inline-start: 0.8rem;
 }
 
 .summary__item {

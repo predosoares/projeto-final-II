@@ -52,8 +52,8 @@ const StartSection = () => {
         realizar a extração do nosso café com o filtro de papel.
       </p>
 
-      <Explorable tabIndex={0}>
-        <CalorimetryCoffee />
+      <Explorable>
+        <CalorimetryCoffee level="start" />
       </Explorable>
 
       <p className="section__text-base">
@@ -68,6 +68,7 @@ const StartSection = () => {
       <p className="section__text-base">Temos que:</p>
 
       <FormulaExample>Q = 300 . 1 . 75 = 22.500 cal = 22.5 kcal</FormulaExample>
+
       <p className="section__text-base">
         Com isso podermos determinar, desprezando as perdas de calor, que a
         nossa fonte emite em média 93.75 cal/s.
@@ -157,7 +158,7 @@ const DevelopSection = () => {
       </p>
 
       <Explorable tabIndex={1}>
-        <CalorimetryCoffee />
+        <CalorimetryCoffee level="develop" />
       </Explorable>
     </section>
   )
@@ -193,7 +194,7 @@ const ExploreSection = () => {
       </p>
 
       <Explorable tabIndex={2}>
-        <CalorimetryCoffee />
+        <CalorimetryCoffee level="explore" />
       </Explorable>
     </section>
   )
@@ -252,8 +253,6 @@ function Chapter() {
       console.log(nextProgressState)
     }
   }
-
-  console.log(progress)
 
   return (
     <div className="chapter">

@@ -2,10 +2,10 @@
   @extend %flex;
   flex-direction: column;
   padding-inline: 2.2rem;
-  padding-block: 2.4rem;
+  padding-block: 2.2rem;
   border-radius: 1.2rem;
   background-color: var(--bg-clr-01);
-  border: 1px solid  var(--bg-clr-02);
+  border: 1px solid var(--bg-clr-02);
   box-shadow: var(--elevation-1);
 
   transition: box-shadow 0.4s ease;
@@ -45,8 +45,9 @@
   padding-block: 1.2rem;
   text-transform: uppercase;
   width: 100%;
-  border-radius: 12px;
-  border: 2px solid var(--bg-clr-02);
+  border-radius: 8px;
+  // border: 2px solid var(--bg-clr-02);
+  background-color: var(--bg-clr-02);
 }
 
 .home__explorable__btn__icon {

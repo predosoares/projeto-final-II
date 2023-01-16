@@ -1,4 +1,4 @@
-import { ReaderIcon } from '@radix-ui/react-icons'
+import { Books as BooksIcon } from 'phosphor-react'
 
 interface ISummaryProps {
   content: {
@@ -13,7 +13,7 @@ const Summary = ({ content }: ISummaryProps) => {
   return (
     <section className="summary">
       <header className="summary__header">
-        <ReaderIcon className="summary__icon" />
+        <BooksIcon className="summary__icon" />
         <h3 className="summary__heading-3">{title}</h3>
       </header>
 

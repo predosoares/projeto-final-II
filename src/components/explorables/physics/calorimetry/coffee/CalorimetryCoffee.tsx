@@ -1,24 +1,30 @@
 import { KeyboardControls, OrbitControls } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber'
-import { useEffect } from 'react'
+import { Canvas, useFrame } from '@react-three/fiber'
+
+import { useDisableKeyboardNavigation } from 'hooks/useDisableKeyboardNavigation'
+
+import {
+  Level,
+  useGame,
+} from 'stores/explorables/physics/calorimetry/coffee/useGame'
 
 import { Experience } from './shared/Experience'
-// import { Interface } from './shared/Interface'
+import { Interface } from './shared/Interface'
 
-export const CalorimetryCoffee = () => {
-  useEffect(() => {
-    const handleKeydown = (event: KeyboardEvent) => {
-      if (event.code === 'Space' && event.target === document.body) {
-        event.preventDefault()
-      }
-    }
+const DisableRender = () => useFrame(() => null, 1000)
 
-    window.addEventListener('keydown', handleKeydown)
+interface ICalorimetryCoffeeProps {
+  level: Level
+}
 
-    return () => {
-      window.removeEventListener('keydown', handleKeydown)
-    }
-  }, [])
+export const CalorimetryCoffee = ({ level }: ICalorimetryCoffeeProps) => {
+  const currLevel = useGame(state => state.level)
+
+  useDisableKeyboardNavigation({
+    containerId: 'explorable',
+  })
+
+  const disableRender = currLevel !== level
 
   return (
     <KeyboardControls
@@ -33,13 +39,22 @@ export const CalorimetryCoffee = () => {
           fov: 45,
           near: 0.1,
           far: 200,
-          position: [2.5, 4, 6],
+          position: [-2.5, 5, 14],
         }}
+        frameloop="demand"
       >
-        <OrbitControls />
+        {disableRender && DisableRender}
+
+        <OrbitControls
+          maxPolarAngle={Math.PI / 2}
+          minAzimuthAngle={-Math.PI / 3}
+          maxAzimuthAngle={Math.PI / 3}
+          minDistance={5}
+          maxDistance={8}
+        />
         <Experience />
       </Canvas>
-      {/* <Interface /> */}
+      <Interface />
     </KeyboardControls>
   )
 }

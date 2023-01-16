@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
-import { Pencil2Icon } from '@radix-ui/react-icons'
+
+import { PencilSimple as PencilSimpleIcon } from 'phosphor-react'
 import { useState } from 'react'
 
 enum FormulaEnum {
@@ -28,7 +29,7 @@ const FundamentalEquationOfCalorimetry = () => {
       </h1>
 
       <button className="formula__btn" type="button">
-        <Pencil2Icon />
+        <PencilSimpleIcon />
       </button>
 
       <div className="formula__group">

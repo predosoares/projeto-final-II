@@ -1,6 +1,6 @@
-import { RocketIcon } from '@radix-ui/react-icons'
 import Head from 'next/head'
 import Link from 'next/link'
+import { RocketLaunch } from 'phosphor-react'
 import { useState } from 'react'
 
 import { Dot } from 'components/Dot'
@@ -73,7 +73,7 @@ export default function Home() {
                       role="open explorable"
                     >
                       Começar
-                      <RocketIcon className="home__explorable__btn__icon" />
+                      <RocketLaunch className="home__explorable__btn__icon" />
                     </button>
                   </article>
                 </Link>

@@ -6,7 +6,7 @@ interface IExplorableProps extends HTMLAttributes<HTMLDivElement> {
 
 const Explorable = ({ children, ...rest }: IExplorableProps) => {
   return (
-    <div className="explorable" {...rest}>
+    <div className="explorable" id="explorable" tabIndex={0} {...rest}>
       {children}
     </div>
   )

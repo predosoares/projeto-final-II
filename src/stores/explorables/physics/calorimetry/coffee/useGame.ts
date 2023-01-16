@@ -2,22 +2,40 @@ import create from 'zustand'
 import { subscribeWithSelector } from 'zustand/middleware'
 
 type Phase = 'ready' | 'playing' | 'ended'
+export type Level = 'start' | 'develop' | 'explore'
+type Environment = {
+  // cal/g.C°
+  specificHeat: number
+  // g
+  mass: number
+  // cal/s
+  heatSource: number
+  // C°
+  ambientTemperature: number
+}
 
-interface IGameState {
-  blocksCount: number
-  blocksSeed: number
+interface ICalorimetryCoffeeGameState {
+  environment: Environment
   startTime: number
   endTime: number
   phase: Phase
+  level: Level
   start: () => void
   restart: () => void
   end: () => void
 }
 
-export default create<IGameState>()(
+export const useGame = create<ICalorimetryCoffeeGameState>()(
   subscribeWithSelector(set => ({
-    blocksCount: 50,
-    blocksSeed: 0,
+    /**
+     * Environment
+     */
+    environment: {
+      specificHeat: 1,
+      mass: 300,
+      heatSource: 93.75,
+      ambientTemperature: 22,
+    },
 
     /**
      * Time
@@ -29,6 +47,11 @@ export default create<IGameState>()(
      * Phases
      */
     phase: 'ready',
+
+    /**
+     * Levels
+     */
+    level: 'start',
 
     start: () => {
       set(state => {
@@ -42,7 +65,7 @@ export default create<IGameState>()(
     restart: () => {
       set(state => {
         if (state.phase === 'playing' || state.phase === 'ended')
-          return { phase: 'ready', blocksSeed: Math.random() }
+          return { phase: 'ready' }
 
         return {}
       })

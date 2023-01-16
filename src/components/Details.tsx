@@ -1,4 +1,7 @@
-import { RocketIcon, ChevronDownIcon } from '@radix-ui/react-icons'
+import {
+  BookOpen as BookOpenIcon,
+  CaretDown as CaretDownIcon,
+} from 'phosphor-react'
 import { ReactNode, useState } from 'react'
 
 interface IDetailsProps {
@@ -17,7 +20,7 @@ const Details = ({ children, title }: IDetailsProps) => {
     <details className="details" open={isOpen} tabIndex={-1}>
       <summary className="details__summary" tabIndex={-1}>
         <div className="details__header">
-          <RocketIcon className="details__icon" />
+          <BookOpenIcon className="details__icon" />
           <h5 className="details__heading-base">Aprofundando</h5>
         </div>
 
@@ -29,7 +32,7 @@ const Details = ({ children, title }: IDetailsProps) => {
           role="button"
           onClick={handleClickOnDetailsBtn}
         >
-          <ChevronDownIcon
+          <CaretDownIcon
             className="details__btn__icon"
             data-state={isOpen ? 'open' : 'close'}
           />

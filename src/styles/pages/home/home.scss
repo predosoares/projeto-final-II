@@ -38,6 +38,7 @@
   margin-block: 2.8rem;
   padding-block: 2rem;
 }
+
 .home__filter__list {
   @extend %flex;
 }
@@ -51,19 +52,19 @@
   padding-inline: 1.4rem;
   padding-block: 0.8rem;
   border-radius: 1.2rem;
-      background-color: transparent;
+  background-color: var(--bg-clr-02);
 
   border: 2px solid var(--bg-clr-02);
   cursor: pointer;
 
   transition: brightness 0.3s ease;
+  box-shadow: var(--elevation-2);
 
   &:hover {
     filter: brightness(0.8);
   }
 
   &[data-selected="true"] {
-    background-color: var(--bg-clr-02);
     box-shadow: var(--elevation-4);
     border-color: var(--accent-clr);
   }
@@ -71,17 +72,12 @@
 
 
 
-.home__results {
-
-}
+.home__results {}
 
 .home__results__list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(25rem, calc((100% - 6rem) / 4 )));
+  grid-template-columns: repeat(auto-fill, minmax(25rem, calc((100% - 6rem) / 4)));
   gap: 2rem;
 }
 
-.home__results__item {
-
-}
-
+.home__results__item {}
