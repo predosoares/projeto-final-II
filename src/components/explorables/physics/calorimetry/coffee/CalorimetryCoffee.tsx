@@ -2,11 +2,9 @@ import { KeyboardControls, OrbitControls } from '@react-three/drei'
 import { Canvas, useFrame } from '@react-three/fiber'
 
 import { useDisableKeyboardNavigation } from 'hooks/useDisableKeyboardNavigation'
+import { ExplorableProgress } from 'hooks/useExplorable'
 
-import {
-  Level,
-  useGame,
-} from 'stores/explorables/physics/calorimetry/coffee/useGame'
+import { useGame } from 'stores/explorables/physics/calorimetry/coffee/useGame'
 
 import { Experience } from './shared/Experience'
 import { Interface } from './shared/Interface'
@@ -14,7 +12,7 @@ import { Interface } from './shared/Interface'
 const DisableRender = () => useFrame(() => null, 1000)
 
 interface ICalorimetryCoffeeProps {
-  level: Level
+  level: ExplorableProgress
 }
 
 export const CalorimetryCoffee = ({ level }: ICalorimetryCoffeeProps) => {
@@ -34,6 +32,11 @@ export const CalorimetryCoffee = ({ level }: ICalorimetryCoffeeProps) => {
       ]}
     >
       <Canvas
+        dpr={[1, 2]}
+        gl={{
+          antialias: false,
+          alpha: false,
+        }}
         shadows
         camera={{
           fov: 45,
@@ -41,7 +44,6 @@ export const CalorimetryCoffee = ({ level }: ICalorimetryCoffeeProps) => {
           far: 200,
           position: [-2.5, 5, 14],
         }}
-        frameloop="demand"
       >
         {disableRender && DisableRender}
 

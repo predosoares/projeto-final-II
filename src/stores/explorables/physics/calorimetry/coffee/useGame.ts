@@ -1,8 +1,9 @@
 import create from 'zustand'
 import { subscribeWithSelector } from 'zustand/middleware'
 
+import { ExplorableProgress } from 'hooks/useExplorable'
+
 type Phase = 'ready' | 'playing' | 'ended'
-export type Level = 'start' | 'develop' | 'explore'
 type Environment = {
   // cal/g.C°
   specificHeat: number
@@ -16,10 +17,11 @@ type Environment = {
 
 interface ICalorimetryCoffeeGameState {
   environment: Environment
-  startTime: number
-  endTime: number
+  currentTime: number
+  elapsedTime: number
+  timeSpeed: number
   phase: Phase
-  level: Level
+  level: ExplorableProgress
   start: () => void
   restart: () => void
   end: () => void
@@ -40,8 +42,9 @@ export const useGame = create<ICalorimetryCoffeeGameState>()(
     /**
      * Time
      */
-    startTime: 0,
-    endTime: 0,
+    currentTime: 0,
+    elapsedTime: 0,
+    timeSpeed: 10,
 
     /**
      * Phases
@@ -51,12 +54,16 @@ export const useGame = create<ICalorimetryCoffeeGameState>()(
     /**
      * Levels
      */
-    level: 'start',
+    level: ExplorableProgress.NOT_STARTED,
 
     start: () => {
       set(state => {
-        if (state.phase === 'ready')
-          return { phase: 'playing', startTime: Date.now() }
+        if (state.phase === 'ready') {
+          return {
+            phase: 'playing',
+            currentTime: Date.now(),
+          }
+        }
 
         return {}
       })
@@ -73,8 +80,7 @@ export const useGame = create<ICalorimetryCoffeeGameState>()(
 
     end: () => {
       set(state => {
-        if (state.phase === 'playing')
-          return { phase: 'ended', endTime: Date.now() }
+        if (state.phase === 'playing') return { phase: 'ended' }
 
         return {}
       })

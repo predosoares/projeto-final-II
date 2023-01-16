@@ -17,6 +17,7 @@
 }
 
 .interface__conditions-list,
+.interface__results-list,
 .interface__actions {
   --gap: 0;
   @extend %center;
@@ -34,7 +35,8 @@
 }
 
 .interface__action-btn,
-.interface__condition {
+.interface__condition,
+.interface__result {
   --gap: 0.8rem;
   @extend %heading-base;
   @extend %center;
@@ -56,7 +58,10 @@
 .interface__conditions-item {}
 
 
-.interface__condition__text {
+.interface__condition__text-base,
+.interface__result__text-base {
+  @extend %text-base;
+
   &.--sr-only {
     @extend %sr-only;
   }
@@ -64,6 +69,58 @@
 
 .interface__results {
   @extend %cover;
+  @extend %center;
+  flex-direction: column;
   z-index: 2;
-  background-color: var(--bg-clr-07);
+  background-color: var(--bg-clr-09);
+}
+
+.interface__results__wrapper {
+  @extend %center;
+  flex-direction: column;
+  background-color: var(--bg-clr-08);
+  padding-block: 3.2rem;
+  padding-inline: 6.4rem;
+  border-radius: 12px;
+  box-shadow: var(--elevation-5);
+}
+
+.interface__results__heading-2xl {
+  @extend %heading-2xl;
+  color: var(--font-clr-06);
+
+}
+
+.interface__results-list {
+  // --gap: 3.2rem;
+  flex-direction: column;
+  box-shadow: unset;
+  background-color: unset;
+}
+
+.interface__result {
+  --gap: 1.8rem;
+  background-color: unset;
+  padding-block: unset;
+}
+
+.interface__result__icon {
+  width: 4.2rem;
+  height: 4.2rem;
+  color: var(--font-clr-06);
+
+}
+
+.interface__result__text-2xl {
+  @extend %text-2xl;
+  color: var(--font-clr-06);
+}
+
+.interface__badge {
+  @extend %text-sm;
+  color: var(--font-clr-06);
+  background-color: var(--bg-clr-08);
+  padding-inline: 0.8rem;
+  border-radius: 4px;
+  margin-inline-start: 1rem;
 }

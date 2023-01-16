@@ -1,10 +1,25 @@
+%text-2xl {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-relaxed);
+
+  @include media ("<phone") {}
+}
+
+%text-lg {
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-relaxed);
+
+  @include media ("<phone") {}
+}
+
 %text-base {
   font-size: var(--text-base);
   font-weight: var(--font-regular);
   line-height: var(--leading-relaxed);
 
-  @include media ("<phone") {
-  }
+  @include media ("<phone") {}
 }
 
 %text-sm {
@@ -12,7 +27,5 @@
   font-weight: var(--font-semibold);
   line-height: var(--leading-relaxed);
 
-  @include media ("<phone") {
-  }
+  @include media ("<phone") {}
 }
-

@@ -12,4 +12,4 @@ const FormulaExample = ({ children }: IFormulaExampleProps) => {
   )
 }
 
-export default FormulaExample
+export { FormulaExample }

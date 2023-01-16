@@ -18,6 +18,7 @@
   --bg-clr-06: hsl(var(--purple-100));
   --bg-clr-07: hsl(var(--purple-600));
   --bg-clr-08: hsl(var(--purple-700));
+  --bg-clr-09: hsl(var(--purple-900) / 0.8);
 
   --border-clr-01: hsl(var(--gray-400));
 }
@@ -41,6 +42,7 @@
     --bg-clr-06: hsl(var(--purple-900));
     --bg-clr-07: hsl(var(--purple-600));
     --bg-clr-08: hsl(var(--purple-700));
+    --bg-clr-09: hsl(var(--purple-900) / 0.8);
 
     --border-clr-01: hsl(var(--gray-800));
   }
@@ -64,6 +66,7 @@
   --bg-clr-06: hsl(var(--purple-100));
   --bg-clr-07: hsl(var(--purple-600));
   --bg-clr-08: hsl(var(--purple-700));
+  --bg-clr-09: hsl(var(--purple-900) / 0.8);
 
   --border-clr-01: hsl(var(--gray-400));
 }
@@ -86,6 +89,7 @@
   --bg-clr-06: hsl(var(--purple-900));
   --bg-clr-07: hsl(var(--purple-600));
   --bg-clr-08: hsl(var(--purple-700));
+  --bg-clr-09: hsl(var(--purple-900) / 0.8);
 
   --border-clr-01: hsl(var(--gray-800));
 }

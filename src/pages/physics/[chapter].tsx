@@ -1,15 +1,16 @@
-// import { BulletList } from 'components/BulletList'
-
 import clsx from 'clsx'
 import { useRef, useState } from 'react'
 
 import { ExplorableProgress, useExplorable } from 'hooks/useExplorable'
 
+// import { useGame } from 'stores/explorables/physics/calorimetry/coffee/useGame'
+
+import { BulletList } from 'components/BulletList'
 import { Details } from 'components/Details'
 import { Explorable } from 'components/Explorable'
 import { CalorimetryCoffee } from 'components/explorables/physics/calorimetry/coffee/CalorimetryCoffee'
 import { Formula, FormulaEnum } from 'components/Formula'
-import FormulaExample from 'components/FormulaExample'
+import { FormulaExample } from 'components/FormulaExample'
 import { Separator } from 'components/Separator'
 import { Summary } from 'components/Summary'
 
@@ -53,7 +54,7 @@ const StartSection = () => {
       </p>
 
       <Explorable>
-        <CalorimetryCoffee level="start" />
+        <CalorimetryCoffee level={ExplorableProgress.START} />
       </Explorable>
 
       <p className="section__text-base">
@@ -64,6 +65,28 @@ const StartSection = () => {
       </p>
 
       <Formula formula={FormulaEnum.FUNDAMENTAL_EQUANTION_OF_CALORIMETRY} />
+
+      <BulletList
+        items={[
+          {
+            value: 'Q',
+            label:
+              'representa a quantidade de calor consumida em calorias (cal).',
+          },
+          {
+            value: 'c',
+            label: 'representa o calor específico em cal/gC° do corpo.',
+          },
+          {
+            value: 'm',
+            label: 'representa a massa em gramas (g) do corpo.',
+          },
+          {
+            value: 'ΔT',
+            label: 'representa a diferença de calor do corpo.',
+          },
+        ]}
+      />
 
       <p className="section__text-base">Temos que:</p>
 
@@ -158,7 +181,7 @@ const DevelopSection = () => {
       </p>
 
       <Explorable tabIndex={1}>
-        <CalorimetryCoffee level="develop" />
+        <CalorimetryCoffee level={ExplorableProgress.DEVELOP} />
       </Explorable>
     </section>
   )
@@ -194,7 +217,7 @@ const ExploreSection = () => {
       </p>
 
       <Explorable tabIndex={2}>
-        <CalorimetryCoffee level="explore" />
+        <CalorimetryCoffee level={ExplorableProgress.EXPLORE} />
       </Explorable>
     </section>
   )
@@ -243,6 +266,7 @@ const Gate = ({ onClick }: IGateProps) => {
 
 function Chapter() {
   const { progress, setProgress } = useExplorable()
+  // const level = useGame(state => state.level)
 
   const handleClickOnProceedBtn = () => {
     const nextProgressState = progress + 1

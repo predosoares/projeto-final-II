@@ -1,20 +1,21 @@
-const BulletList = () => {
+interface IBulletListProps {
+  items?: Array<{
+    value: string
+    label: string
+  }>
+}
+
+const BulletList = ({ items = [] }: IBulletListProps) => {
   return (
     <ul className="bullet-list">
-      <li className="bullet-list__item">
-        <span className="bullet-list__bullet">1</span>
-        <p className="bullet-list__text">
-          <strong>Velocidade:</strong> grandeza vetorial que indica a distancia
-          percorrida durante um intervalo de tempo.
-        </p>
-      </li>
-      <li className="bullet-list__item">
-        <span className="bullet-list__bullet">2</span>
-        <p className="bullet-list__text">
-          <strong>Massa:</strong> grandeza escalar que indica a distancia
-          percorrida durante um intervalo.
-        </p>
-      </li>
+      {items?.map((item, index) => (
+        <li className="bullet-list__item" key={item.value}>
+          <span className="bullet-list__bullet">{index + 1}</span>
+          <p className="bullet-list__text-base">
+            <strong>{item.value}:</strong> {item.label}
+          </p>
+        </li>
+      ))}
     </ul>
   )
 }

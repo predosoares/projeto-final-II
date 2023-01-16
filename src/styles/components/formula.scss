@@ -14,7 +14,8 @@
 }
 
 .formula__form,
-.formula__group {
+.formula__group,
+.formula__expression {
   @extend %center;
 }
 
@@ -71,4 +72,18 @@
 
   background-color: var(--bg-clr-08);
   box-shadow: var(--elevation-2);
+  color: var(--font-clr-06);
+}
+
+.formula__expression,
+.formula__text-lg {
+  @extend %text-lg;
+  color: var(--font-clr-06);
+  background-color: var(--bg-clr-08);
+}
+
+.formula__expression {
+  --gap: 1rem;
+  padding-inline: 1.2rem;
+  border-radius: 8px;
 }

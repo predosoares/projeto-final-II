@@ -8,7 +8,6 @@ const useDisableKeyboardNavigation = ({
   containerId = '',
 }: IUseDisableKeyboardNavigationP) => {
   useEffect(() => {
-    console.log(containerId)
     const navigationKeys = [
       'Space',
       'ArrowUp',
@@ -19,8 +18,6 @@ const useDisableKeyboardNavigation = ({
 
     const handleKeydown = (event: KeyboardEvent) => {
       const target = event.target as HTMLElement
-
-      console.log(target, target.id, containerId)
 
       if (
         navigationKeys.indexOf(event.code) > -1 &&

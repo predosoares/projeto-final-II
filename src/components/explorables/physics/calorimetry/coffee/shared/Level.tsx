@@ -39,8 +39,9 @@ export function Level() {
     const unsubscribeHeat = useGame.subscribe(
       state => state.phase,
       value => {
-        if (value === 'playing') setIsHeating(true)
-        else if (value === 'ended') setIsHeating(false)
+        if (value === 'playing') {
+          setIsHeating(true)
+        } else if (value === 'ended') setIsHeating(false)
       },
     )
 
